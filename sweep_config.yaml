@@ -1,0 +1,22 @@
+program: train.py
+method: random
+
+metric:
+  name: dev_loss
+  goal: minimize
+
+parameters:
+  embedding_dim:
+    values: [16, 32, 64, 256]
+  hidden_dim:
+    values: [16, 32, 64, 256]
+  encoder_layers:
+    values: [1, 2, 3]
+  decoder_layers:
+    values: [1, 2, 3]
+  cell_type:
+    values: ["RNN", "GRU", "LSTM"]
+  dropout:
+    values: [0.2, 0.3]
+  learning_rate:
+    values: [0.001, 0.0005]
